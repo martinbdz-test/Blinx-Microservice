@@ -1,20 +1,11 @@
 server:
-  port: 9191
+  port: 9002
 
 spring:
   application:
-    name: API-GATEWAY
+    name: USER-IDENTITY-SERVICE
 
-  cloud:
-    gateway:
-      routes:
-        - id: USER-IDENTITY-SERVICE
-          uri: lb://USER-IDENTITY-SERVICE
-          predicates:
-            - Path=/api/**
-
-
-  eureka:
+    eureka:
     client:
       register-with-eureka: true
       fetch-registry: true
