@@ -69,18 +69,6 @@ public final class UserResource {
         return ResponseEntity.created(uri).body(userService.saveUser(user));
     }
 
-    @PostMapping("/role/save")
-    public ResponseEntity<Role> saveRole(@RequestBody Role role) {
-        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/role/save").toUriString());
-        return ResponseEntity.created(uri).body(userService.saveRole(role));
-    }
-
-    @PostMapping("/role/addtouser")
-    public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUserForm form) {
-        userService.addRoleToUser(form.getUsername(), form.getRoleName());
-        return ResponseEntity.ok().build();
-    }
-
     @PostMapping("/token/refresh")
     public void refreshToken(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String authorizationHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
@@ -122,10 +110,4 @@ public final class UserResource {
             new RuntimeException("Refresh token is missing");
         }
     }
-}
-
-@Data
-class RoleToUserForm {
-    private String username;
-    private String roleName;
 }
