@@ -1,7 +1,6 @@
 package com.blinx.userservice.service;
 
 import com.blinx.userservice.domain.User;
-import com.blinx.userservice.repo.RoleRepo;
 import com.blinx.userservice.repo.UserRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +19,6 @@ import java.util.List;
 public class UserServiceImpl implements UserService, UserDetailsService {
 
     private final UserRepo userRepo;
-    private final RoleRepo roleRepo;
     private final PasswordEncoder passwordEncoder;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
