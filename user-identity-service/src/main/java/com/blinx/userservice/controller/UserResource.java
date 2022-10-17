@@ -4,11 +4,9 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.blinx.userservice.domain.Role;
 import com.blinx.userservice.domain.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.blinx.userservice.service.UserService;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -21,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URI;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -83,10 +80,7 @@ public final class UserResource {
 
                 String access_token = JWT.create().withSubject(user.getUsername())
                         .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 1000))
-                        .withIssuer(request.getRequestURL().toString())
-                        .withClaim("roles", user.getRoles().stream()
-                                .map(Role::getName).collect(Collectors.toList())
-                        ).sign(algorithm);
+                        .withIssuer(request.getRequestURL().toString()).sign(algorithm);
 
 
                 Map<String, String> tokens = new HashMap<>();
