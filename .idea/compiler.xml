@@ -14,7 +14,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cloud-gateway" target="11" />
-      <module name="service-registry" target="17" />
+      <module name="service-registry" target="11" />
       <module name="user-identity-service" target="11" />
     </bytecodeTargetLevel>
   </component>

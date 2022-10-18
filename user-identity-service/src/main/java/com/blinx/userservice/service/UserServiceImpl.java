@@ -30,9 +30,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             log.error("User found in the database {}", username);
         }
 
-        //We loop through all roles and pass the role names to authorities collection,
-        // so we can use it for authentication
-
         
         return new  org.springframework.security.core.userdetails.User
                 (user.getUsername(), user.getPassword(), null);
