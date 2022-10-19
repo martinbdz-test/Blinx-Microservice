@@ -27,7 +27,6 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
 
       - name: Build and analyze
-        uses: SonarSource/sonarcloud-github-action@master
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=BlinxCode_Blinx-Microservice
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
@@ -55,7 +54,6 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
 
       - name: Build and analyze
-        uses: SonarSource/sonarcloud-github-action@master
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=BlinxCode_Blinx-Microservice
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
@@ -83,7 +81,6 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
 
       - name: Build and analyze
-        uses: SonarSource/sonarcloud-github-action@master
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=BlinxCode_Blinx-Microservice
 
         env:
