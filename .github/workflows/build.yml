@@ -31,7 +31,7 @@
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
             restore-keys: ${{ runner.os }}-m2
         - name: Build and analyze
-          run: mvn -e switch -B verify sonar:sonar -Dsonar.projectKey=BlinxCode_Blinx-Microservice_cloud-gateway -Dsonar.organization=BlinxCode -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+          run: mvn -e switch -B verify sonar:sonar -Dsonar.projectKey=BlinxCode_Blinx-Microservice/cloud-gateway -Dsonar.organization=BlinxCode -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
 
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
@@ -63,7 +63,7 @@
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
             restore-keys: ${{ runner.os }}-m2
         - name: Build and analyze
-          run: mvn -e switch -B verify sonar:sonar -Dsonar.projectKey=BlinxCode_Blinx-Microservice_service-registry -Dsonar.organization=BlinxCode -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+          run: mvn -e switch -B verify sonar:sonar -Dsonar.projectKey=BlinxCode_Blinx-Microservice/service-registry -Dsonar.organization=BlinxCode -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -93,7 +93,7 @@
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
             restore-keys: ${{ runner.os }}-m2
         - name: Build and analyze
-          run: mvn -e switch -B verify sonar:sonar -Dsonar.projectKey=BlinxCode_Blinx-Microservice_user-identity-service -Dsonar.organization=BlinxCode -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+          run: mvn -e switch -B verify sonar:sonar -Dsonar.projectKey=BlinxCode_Blinx-Microservice/user-identity-service -Dsonar.organization=BlinxCode -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
 
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
