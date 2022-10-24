@@ -89,7 +89,7 @@
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
             restore-keys: ${{ runner.os }}-m2
         - name: Build and analyze
-          run: mvn -X switch -B verify sonar:sonar  -Dsonar.projectKey=BlinxCode_Blinx-Microservice -Dsonar.organization=BlinxCode -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.projectBaseDir=identity-service/
+          run: mvn -X switch -B verify sonar:sonar  -Dsonar.projectKey=BlinxCode_Blinx-Microservice -Dsonar.organization=BlinxCode -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.projectBaseDir=user-identity-service/
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
